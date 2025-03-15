@@ -24,19 +24,19 @@ public class ShoppingCartStep  {
     }
 
     @And("the user clicks on smart device items from the product catalog")
-    public void userClicksOnSmartDevicesItems() {
+    public void userClicksOnSmartDevicesItems() throws InterruptedException {
        shoppingCartPage.clickSmartDevices();
 
 
     }
 
     @And("the user clicks on mobile phones and smartphones")
-    public void userClicksOnMobile() {
+    public void userClicksOnMobile() throws InterruptedException {
         shoppingCartPage.clickMobilePhone();
     }
 
     @And("user selects apple iphone pro max desert titanium")
-    public void theUserAddsIphoneToTheCart() {
+    public void theUserAddsIphoneToTheCart() throws InterruptedException {
         shoppingCartPage.clickIphonePro();
 
     }

@@ -42,7 +42,7 @@ public class LoginPage extends BasePage{
         numberInput.click();
         numberInput.sendKeys(number);
         numberSubmitButton.click();
-        Thread.sleep(10000);
+        Thread.sleep(15000);
         logIn.click();
     }
 

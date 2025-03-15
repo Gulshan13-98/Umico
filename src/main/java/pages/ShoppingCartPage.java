@@ -3,6 +3,7 @@ package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -30,7 +31,8 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[1]/div[1]/div/div[2]/div[2]/div/a[6]")
     private WebElement smartDevices;
 
-    public void clickSmartDevices() {
+    public void clickSmartDevices() throws InterruptedException {
+        Thread.sleep(2000);
         smartDevices.click();
 
     }
@@ -41,25 +43,27 @@ public class ShoppingCartPage extends BasePage {
 
 
 
-    public void clickMobilePhone() {
+    public void clickMobilePhone() throws InterruptedException {
+        Thread.sleep(2000);
         mobilePhone.click();
+     }
 
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("window.scrollBy(0,1500)");
-
-    }
-
-    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/div[1]/div[12]/div[1]/a/span[2]/span[2]")
+    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[3]/div[1]/div[9]/div[1]/a")
     private WebElement iphonePro;
 
-    public void clickIphonePro(){
+    public void clickIphonePro()throws InterruptedException{
+        Thread.sleep(5000);
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(0, 1000).perform();
         iphonePro.click();
+
     }
 
-    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[1]/div[1]/div/div[3]/div/div[2]/div[11]/button[1]")
+    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[1]/div[1]/div/div[2]/div/div[2]/div[11]/button[1]")
     private WebElement addToCartButton;
 
-    public void clickAddToCartButton(){
+    public void clickAddToCartButton() throws InterruptedException{
+        Thread.sleep(2000);
         addToCartButton.click();
     }
 
@@ -72,7 +76,7 @@ public class ShoppingCartPage extends BasePage {
     }
 
 
-    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div/div/button[2]")
+    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[3]/span/div/div[1]/div[2]/div[2]/div[3]/div/div/button[2]")
     private WebElement theProductIncreases;
 
     public void clickTheProductIncreases() throws InterruptedException {
@@ -80,7 +84,7 @@ public class ShoppingCartPage extends BasePage {
         Thread.sleep(3000);
     }
 
-    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div[1]/div/button[1]")
+    @FindBy(xpath = "//*[@id=\"__layout\"]/section/div[3]/span/div/div[1]/div[2]/div[2]/div[3]/div/div/button[1]")
     private WebElement theProductDecreases;
 
     public void clickTheProductDecreases(){
